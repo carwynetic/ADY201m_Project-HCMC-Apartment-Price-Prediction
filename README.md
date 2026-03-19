@@ -48,7 +48,7 @@ ADY304m_Project_HCMC_Apartment/
 └── README.md                       # Tài liệu dự án
 
 ```
-🚀 Hướng dẫn Cài đặt & Sử dụng (How to Run)
+## 🚀 Hướng dẫn Cài đặt & Sử dụng (How to Run)
 
 Bước 1: Clone kho lưu trữ
 
@@ -74,13 +74,12 @@ Chạy các script theo thứ tự vòng đời dữ liệu:
 - python scripts/05_permutation_importance.py (Phân tích tính minh bạch của mô hình)
 
 Bước 4: Khởi chạy Dashboard
+Bash
+- Di chuyển vào thư mục dashboards và chạy file app.py (tuỳ thuộc thư viện bạn dùng: Streamlit/Dash)
+- Ví dụ với Streamlit:
+  streamlit run dashboards/app.py
 
-- Bash
-# Di chuyển vào thư mục dashboards và chạy file app.py (tuỳ thuộc thư viện bạn dùng: Streamlit/Dash)
-# Ví dụ với Streamlit:
-- streamlit run dashboards/app.py
-
-📊 Tóm tắt Kết quả Thực nghiệm
+## 📊 Tóm tắt Kết quả Thực nghiệm
 
 Sau khi làm sạch, tập dữ liệu giữ lại 16,520 quan sát hợp lệ. Thử nghiệm trên 10 thuật toán Hồi quy khác nhau cho thấy nhóm mô hình phi tuyến (Tree-based Ensemble) hoàn toàn vượt trội so với các mô hình tuyến tính truyền thống.
 
@@ -98,7 +97,7 @@ Diễn giải mô hình (Permutation Importance):
 
 Phân tích độ suy giảm hiệu năng (RMSE) khi hoán vị đặc trưng chỉ ra rằng Vị trí địa lý (đặc biệt là Quận 2 và Quận 1) và Quy mô diện tích là hai rường cột định hình cấu trúc giá căn hộ tại TP.HCM. Tình trạng nội thất chỉ đóng vai trò thứ yếu (đóng góp ~3%).
 
-👥 Nhóm Tác giả (Authors)
+## 👥 Nhóm Tác giả (Authors)
 Nguyễn Đoàn Bảo Phúc (SE201883) - Trưởng nhóm / Kỹ sư Dữ liệu
 
 Trần Nguyễn Minh Hải (SE203718)
