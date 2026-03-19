@@ -1,0 +1,11 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+statsmodels
+xgboost
+lightgbm
+tabulate
+selenium
+undetected-chromedriver
