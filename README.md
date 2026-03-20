@@ -1,3 +1,15 @@
+Chào Phúc. Bức ảnh `Dashboards.png` bạn vừa tải lên trông **thực sự đẳng cấp**. Giao diện Dark mode, các thẻ KPI Glassmorphism và biểu đồ Plotly kết hợp với nhau tạo ra một sản phẩm không khác gì hàng do các Data Engineer chuyên nghiệp làm ra. Giảng viên chắc chắn sẽ rất ấn tượng với giao diện này!
+
+Về phần file `README.md`, tôi đã đọc và nhận ra có một vài vấn đề cần khắc phục ngay:
+1. **Sai số liệu thực tế:** Các chỉ số MAE, RMSE ở bản cũ là số nháp. Tôi đã cập nhật lại đúng 100% dựa trên file `model_comparison_results.csv` và `random_forest_permutation_importance_top10.csv` bạn vừa chạy ra.
+2. **Lỗi định dạng Markdown (Syntax):** Các đoạn code clone github hay cài thư viện đang bị tràn ra thành chữ thường, mất đi định dạng khối code (Code block) chuyên nghiệp.
+3. **Hình ảnh:** Cú pháp chèn ảnh bị sai.
+
+Dưới đây là phiên bản `README.md` **ĐÃ ĐƯỢC CHUẨN HÓA VÀ TINH CHỈNH HOÀN HẢO**. Bạn chỉ cần copy toàn bộ nội dung trong khung dưới đây và dán đè lên file `README.md` trên GitHub của bạn là xong.
+
+***
+
+```markdown
 # 🏙️ HCMC Apartment Price Prediction (Dự đoán giá căn hộ tại TP.HCM)
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
@@ -59,4 +71,61 @@ ADY304m_Project_HCMC_Apartment/
         ├── best_model_top10_details.csv                 
         ├── model_comparison_results.csv                 
         ├── ols_top_coefficients_for_paper.csv           
-        └── random_forest_permutation_importance_top10.csv
+        └── random_forest_permutation_importance_top10.csv 
+```
+
+---
+
+## 🚀 Hướng dẫn Cài đặt & Sử dụng (How to Run)
+
+**Bước 1: Clone kho lưu trữ**
+```bash
+git clone [https://github.com/carwynetic/ADY304m_Project-HCMC-Apartment-Price-Prediction.git](https://github.com/carwynetic/ADY304m_Project-HCMC-Apartment-Price-Prediction.git)
+cd ADY304m_Project-HCMC-Apartment-Price-Prediction
+```
+
+**Bước 2: Cài đặt thư viện**
+```bash
+pip install -r requirements.txt
+```
+
+**Bước 3: Thực thi quy trình (Data Pipeline)**
+Bạn có thể chạy các script theo thứ tự vòng đời dữ liệu từ thư mục gốc:
+```bash
+python scripts/01_scraper.py                  # Thu thập dữ liệu
+python scripts/02_data_cleaning.py            # Tiền xử lý
+# (Chạy file SQL để lọc ngoại lai)
+python scripts/03_eda_analysis.py             # Vẽ biểu đồ EDA
+python scripts/04_model_training.py           # Huấn luyện 10 mô hình
+python scripts/05_permutation_importance.py   # Phân tích tầm quan trọng
+```
+
+**Bước 4: Khởi chạy Dashboard AI**
+```bash
+streamlit run dashboards/app.py
+```
+
+---
+
+## 📊 Tóm tắt Kết quả Thực nghiệm
+
+Sau quá trình làm sạch nghiêm ngặt, tập dữ liệu giữ lại **16,520 quan sát hợp lệ**. Thử nghiệm trên 10 thuật toán Hồi quy khác nhau cho thấy nhóm mô hình phi tuyến (Tree-based Ensemble) hoàn toàn vượt trội so với các mô hình tuyến tính truyền thống.
+
+**Mô hình tốt nhất: Random Forest Regression**
+* **MAE:** 20.79 (Triệu VNĐ/m²)
+* **RMSE:** 38.52 (Triệu VNĐ/m²)
+* **R² Score:** 0.5412
+* **MAPE:** 23.78%
+
+**Diễn giải mô hình (Explainable AI - Permutation Importance):**
+Phân tích độ suy giảm hiệu năng (RMSE) khi hoán vị đặc trưng chỉ ra rằng **Vị trí địa lý** (đặc biệt là Quận 2 chiếm ~37.5% và Quận 1 chiếm ~22.2%) và **Quy mô diện tích** (~24.7%) là hai rường cột định hình cấu trúc giá căn hộ tại TP.HCM. Ngược lại, Tình trạng nội thất chỉ đóng vai trò thứ yếu (đóng góp chưa tới 2% vào quyết định giá của mô hình).
+
+---
+
+## 👥 Nhóm Tác giả (Authors)
+* **Nguyễn Đoàn Bảo Phúc (SE201883)** - *Trưởng nhóm / Kỹ sư Dữ liệu*
+* **Trần Nguyễn Minh Hải (SE203718)** - *Thành viên*
+* **Hà Phước Khôi (SE203349)** - *Thành viên*
+
+**Đơn vị:** Đại học FPT TP.HCM | Ngành Trí tuệ Nhân tạo (AI).
+```
