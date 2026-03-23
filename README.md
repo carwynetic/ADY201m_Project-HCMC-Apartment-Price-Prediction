@@ -25,7 +25,7 @@
 Dự án được tổ chức theo tiêu chuẩn khoa học dữ liệu hiện đại:
 
 ```text
-ADY304m_Project_HCMC_Apartment/
+ADY201m_Project_HCMC_Apartment-Price-Prediction/
 │
 ├── .gitignore                      # Cấu hình ẩn file rác
 ├── README.md                       # Tài liệu dự án
